@@ -10,7 +10,9 @@ body {
 
 /* Clearfix */
 .header-wrapper:after,
-.about-us:before {
+.wrapper:after,
+.about-us:before,
+.contact:before {
 	clear: both;
 	content: "";
 	display: table;
@@ -77,10 +79,10 @@ p.slogan {
     min-height: 450px;
 }
 .jumbotron-wrapper h1 {
-	font-size: 55px;
 	color: #fff;
-	font-weight: 300;
 	font-family: Lato;
+	font-size: 55px;
+	font-weight: 300;
 }
 .jumbotron-wrapper h1 span {
 	font-weight: bold;
@@ -110,7 +112,8 @@ p.slogan {
 	text-transform: uppercase;
 }
 .learn-more:hover,
-.portfolio-tag:hover {
+.portfolio-tag:hover,
+.submit:hover {
 	background-color: #09aa89;
 }
 .learn-more-btn {
@@ -128,13 +131,15 @@ p.slogan {
     width: 50%;
 }
 .portfolio-title,
-.about-us-title {
+.about-us-title,
+.contact-title {
 	color: #444;
 	font-size: 28px;
 	font-weight: 400;
 	margin: 0;
 }
-.lead-portfolio {
+.lead-portfolio,
+.lead-contact {
 	color: #444;
 	font-size: 14px;
 }
@@ -147,7 +152,7 @@ p.slogan {
 	display: block;
 	list-style: none;
 	margin: 20px 0 0 0;
-	padding: 0;
+	padding-bottom: 40px;
 	text-align: center;
 	width: 100%;
 }
@@ -286,6 +291,7 @@ p.slogan {
 .team-item p {
     font-size: 14px;
     padding: 0 15px 20px;
+    text-align: justify;
 }
 /* Team social */
 .social {
@@ -329,3 +335,88 @@ p.slogan {
 	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAZCAYAAAAv3j5gAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpGNzdGMTE3NDA3MjA2ODExODA4M0VCODNDNjJCRDdDMSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo5MDE1NjFFNDUxNTMxMUU1QTE0MkMwODY1OTMyODA5QiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo5MDE1NjFFMzUxNTMxMUU1QTE0MkMwODY1OTMyODA5QiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjkyMDk0QzJFODQ0OUU1MTFBMDBDQjc4Q0UzODE2QjRBIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkY3N0YxMTc0MDcyMDY4MTE4MDgzRUI4M0M2MkJEN0MxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+X9xomAAAAclJREFUeNqUVtFxgzAMJXf5LyMwgjcoG5QRGIFM4BEYIe0EjEA6AekEzgZ0A9f0pN7DkWTqu3eXGNl6kqVnn2KM1YHRJrwmuISa5h4JXwm3hHtxh82RgjrBJ6yxPEJCb+ylOuoEBwvNt0TC0eZTZuOOOuphoc/+t2Tj6DfDgcOVCJmOejBGZiOkqBbIseNJIPXkyIGTRjivQN9H40wXcLTbBw0XiQmg1djShrz+SimPFOHOUQ9GViVyamalMj3YcgYadDTjpIEGNp3gdxCi3JFnVshSS1tPi9bsHLxSIBWQqM7U7Tw8dT7PoRLg+Kb5S8K7oQc3UpVm8zoUun6GA+b0eGhQK9Vs124RvZD3C2jWg6CNT4h4FaK+U9R/45x9vBWksUsYf1PxnCIczymH/vCFapszER2hIEprHE/smkso01VRaW7STlkbmEg+URsCOwrfB6PRHQaQLxgUgdUYOyN9V4wWBXEFIXSKimvpiZldi82ai+oAvREKuZeYDxnpnfhqi44IrKRpqOLeuvjwTgnGlZGXcYSCEkmW0sES1BmXXZ9J1vCfxwkfaBAeKDMhCJqoFs7pwLtuk503khUnSM8mXR+lt92PAAMAP4fpHa3vK8cAAAAASUVORK5CYII=) no-repeat center;
 }
 
+/* Contact Us */
+.contact {
+	background-color: #ecf0f1;
+	padding-bottom: 40px;
+}
+.lead-contact {
+    margin-bottom: 50px;
+}
+.form {
+	box-sizing: border-box;
+	float: left;
+	padding: 0 15px;
+	width: 50%;
+}
+.name,
+.email,
+textarea {
+	border: 2px solid #bec3c7;
+}
+.name,
+.email {
+	background-color: #fff;
+	font-size: 14px;
+	outline: none;
+	padding: 13px 10px;
+	width: 220px;
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    margin-bottom: 20px;
+}
+.name {
+    margin-right: 10px;
+}
+textarea {
+	width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    position: relative;
+    resize: none;
+    outline: none;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #999;
+    font-size: 14px;
+    font-style: italic;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+     color: #999;
+     font-size: 14px;
+     font-style: italic;
+}
+textarea::-webkit-input-placeholder {  /* Для зміни зовнішнього вигляду placeholder у Safari та Сhrome */
+    color: #999;
+    font-size: 14px;
+}
+textarea::-moz-placeholder { /* Для зміни зовнішнього вигляду placeholder у Firefox */
+    color: #999;
+    font-size: 14px;
+}
+.submit {
+	background-color: #1bbc9b;
+	border: none;
+	color: #fff;
+	float: right;
+	font-size: 14px;
+	text-transform: uppercase;
+    line-height: 1.5;
+    margin: 22px 0;
+    outline: none;
+    padding: 10px 31px 6px;
+}
+/* Information block */
+.contact-information {
+	box-sizing: border-box;
+	float: left;
+	padding: 0 15px;
+	width: 50%;
+}
+.contact-information h2 {
+	color: #444;
+	font-size: 14px;
+	margin-top: 0;
+	text-transform: uppercase;
+}
